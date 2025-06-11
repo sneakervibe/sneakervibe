@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SneakerVibe Web Demo</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #fff; text-align: center; padding: 2em; }
+    .sneaker { width: 300px; filter: drop-shadow(0 0 10px #888); }
+    .color-btn, .vibe-btn {
+      margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;
+      font-weight: bold;
+    }
+    .color-picker { margin-top: 20px; }
+    .vibes { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>SneakerVibe 👟🎵</h1>
+  <img src="assets/sneaker_base.png" class="sneaker" id="sneakerImage" />
+
+  <div class="color-picker">
+    <h2>Wähle eine Farbe</h2>
+    <button class="color-btn" style="background:red;" onclick="changeColor('red')">Rot</button>
+    <button class="color-btn" style="background:blue;" onclick="changeColor('blue')">Blau</button>
+    <button class="color-btn" style="background:lime;" onclick="changeColor('lime')">Grün</button>
+    <button class="color-btn" style="background:yellow;" onclick="changeColor('yellow')">Gelb</button>
+  </div>
+
+  <div class="vibes">
+    <h2>Wähle deinen Vibe</h2>
+    <button class="vibe-btn" onclick="selectVibe('Psy-Goa')">Psy-Goa</button>
+    <button class="vibe-btn" onclick="selectVibe('Urban')">Urban</button>
+    <button class="vibe-btn" onclick="selectVibe('Chill')">Chill</button>
+    <p id="vibeOutput">🎶 Aktueller Vibe: -</p>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById('sneakerImage').style.filter = 'drop-shadow(0 0 15px ' + color + ')';
+    }
+    function selectVibe(vibe) {
+      document.getElementById('vibeOutput').innerText = '🎶 Aktueller Vibe: ' + vibe;
+    }
+  </script>
+</body>
+</html>
